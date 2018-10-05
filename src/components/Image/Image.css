@@ -1,5 +1,5 @@
 img {
     border: 1px solid black;
-    max-height: 150px;
-    max-width: 150px;
+    margin: 15px 0px;
+    max-width: 100%;
 }

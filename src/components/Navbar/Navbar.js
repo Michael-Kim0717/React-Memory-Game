@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = props => (
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <Link className="navbar-brand" to="/">
-      React Memory Game
+      Animal Memory Game
     </Link>
   </nav>
 );
