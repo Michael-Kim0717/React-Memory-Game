@@ -1,8 +1,10 @@
 import React from "react";
+import "./Footer.css"
 
 const Footer = () => (
   <footer className="footer">
-    <span> React Memory Game 2018 </span>
+    <hr />
+    <h6> Animal Memory Game 2018 </h6>
   </footer>
 );
 

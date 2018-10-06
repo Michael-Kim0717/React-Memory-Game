@@ -1,8 +1,40 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.container-fluid {
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+#title {
+    background-color: #4D6D9A;
+    padding: 25px;
+}
+
+body {
+    background-color: #86B3D1;
+}
+
 h1 {
+    color: black;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+
     font-weight: 700;
     text-align: center;
 }
 
 h4 {
     line-height: 1.5em;
+}
+
+#imageContainer {
+    background-color: #99CED3;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 100vh;
+    margin: 15px 0px;
 }
