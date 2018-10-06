@@ -9,26 +9,42 @@ import images from "../images.json";
 
 import "../style.css";
 
-/* let clickedArray = [false, false, false, false, false, false, false, false, false, false, false, false]; */
+let score = 0, maxScore = 0;
 
 class Home extends Component {
     // Setting this.state.images to the images json array
     state = {
-        images
+        images,
+        score,
+        maxScore
     };
     
     clickImage = (id) => {
-        if (!this.state.images[id].clicked){
-            images[id].clicked = true;
-            this.setState(this.reorderImages(images));
+        let index;
+        for (let i = 0; i < 12; i++){
+            if (this.state.images[i].id ===  id){
+                index = i;
+                break;
+            }
+        }
+        if (!this.state.images[index].clicked){
+            images[index].clicked = true;
+            this.setState({
+                images: this.reorderImages(images),
+                score: this.state.score + 1,
+                maxScore: this.state.maxScore
+            });
         }
         else {
             for (let i = 0; i < images.length; i++){
                 images[i].clicked = false;
             }
-            const imageArray = images;
-            console.log(imageArray);
-            this.setState(imageArray);
+            const currentScore = this.state.score;
+            this.setState({
+                images: images,
+                score: 0,
+                maxScore: currentScore > this.state.maxScore ? currentScore : this.state.maxScore
+            });
         }
     }
 
@@ -36,7 +52,6 @@ class Home extends Component {
         const reorderedImages = [];
         while (imageArray.length !== 0){
             const imageToReorder = Math.floor(Math.random() * imageArray.length);
-            console.log(imageToReorder);
             reorderedImages.push(imageArray[imageToReorder]);
             imageArray.splice(imageToReorder, 1);
         }
@@ -64,6 +79,11 @@ class Home extends Component {
                             If you click an image that you already clicked within this round, it's Game Over! <br/>
                             Keep track of what images you clicked on already! 
                         </h4>
+                        <h1> 
+                            Score : {this.state.score} 
+                            <br/>
+                            Max Score : {this.state.maxScore} 
+                        </h1>
                     </Col>
                 </Row>
                 <Row>
