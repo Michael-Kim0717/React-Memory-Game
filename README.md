@@ -15,6 +15,7 @@ A minimal game that utilizes React and React's components to test the player's m
   Languages :
   
   Javascript
+  Node
   React
   HTML / CSS / Bootstrap
 
